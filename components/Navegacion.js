@@ -5,13 +5,12 @@ import Nav from 'react-bootstrap/Nav';
 import Link from 'next/link';
 
 
-
 const Navegacion = () => {
   return (
   <>
-    <Navbar bg="dark" variant="dark" >
-        <Container>
-        <Link href="/home">
+    <Navbar bg="dark" variant="dark">
+        <Container className='d-flex justify-content-center'>
+        <Link href="/index">
           <Navbar.Brand >Navbar</Navbar.Brand>
           </Link>
           <Nav className="text-center">
@@ -20,10 +19,7 @@ const Navegacion = () => {
             </Link> 
             <Link href="/contacto">
               <a className='nav-link'> contacto </a>
-            </Link>        
-            <Link href="#pricing">
-            <a className='nav-link'>Productos</a>
-            </Link>            
+            </Link>                  
           </Nav>
         </Container>
       </Navbar>

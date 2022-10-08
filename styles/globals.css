@@ -23,15 +23,23 @@ footer{
   position: absolute;
   bottom: 0;
   height: 15em;
-}
-
-footer ul {
   padding: 12px;
 }
 
+footer ul {
+  
+}
+
 #copyright{
-  position: absolute;
+  position: relative;
   bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link{
+  display: inline !important;
 }
 
 

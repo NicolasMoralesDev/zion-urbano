@@ -19,8 +19,11 @@ const Pie = () => {
     <li>lorem asd asd asd asd asd</li>
     <li>lorem asd asd asd asd asd</li>
     </div>
+    <div className="row-2">
+   <h4  id='copyright' > © copyright  <a href="" className='nav-link'> Nicolas Morales  </a> y  <a href="" className='nav-link'>Luciano Rivera</a> - 2022</h4>
+   </div>
    </ul>
-    <div id="copyright" className='d-flex justify-content-center '><h4>copyright  <a href="" className='nav-link'> Nicolas Morales  </a> y  <a href="" className='nav-link'>Luciano Rivera</a> - 2022</h4></div>
+
     </footer>
   )
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import 'react-bootstrap'
 import Layout from '../components/Layout'
 import Head from 'next/head'
 
@@ -7,10 +6,12 @@ export default function Home() {
   return (
     <>
     <Head>
-        <title>Home</title>
+        <title>catalogo</title>
     </Head>
       <Layout>
-   <h1>66</h1>
+      <div className='container mt-5'>
+      
+      </div>
       </Layout>
     </>
   )
