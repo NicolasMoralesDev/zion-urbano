@@ -1,31 +1,18 @@
 import React from 'react'
-import Layout from './layout'
+import Layout from '../components/Layout'
 import Head from 'next/head'
 
 const contacto = () => {
-  return (
+  return(
     <>
     <Head>
         <title>contacto</title>
     </Head>
     <Layout>
-    
-    <h1>Contactojjjjjjjjjjj</h1>
-    <h1>Contactojjjjjjjjjjj</h1>
-    <h1>Contactojjjjjjjjjjj</h1>
-    <h1>Contactojjjjjjjjjjj</h1>
-    <h1>Contactojjjjjjjjjjj</h1>
-    <h1>Contactojjjjjjjjjjj</h1>
-    <h1>Contactojjjjjjjjjjj</h1>
-    <h1>Contactojjjjjjjjjjj</h1>
-    <h1>Contactojjjjjjjjjjj</h1>
-    <h1>Contactojjjjjjjjjjj</h1>
-    <h1>Contactojjjjjjjjjjj</h1>
+     <h1>contacto</h1>
     </Layout>
-   
-
     </>
-  )
+    )
 }
 
 export default contacto

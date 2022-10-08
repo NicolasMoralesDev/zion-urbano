@@ -11,8 +11,27 @@ a {
   text-decoration: none;
 }
 
+ul , li{
+  list-style: none;
+}
+
 * {
   box-sizing: border-box;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  height: 15em;
+}
+
+footer ul {
+  padding: 12px;
+}
+
+#copyright{
+  position: absolute;
+  bottom: 0;
 }
 
 
