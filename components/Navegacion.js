@@ -10,10 +10,10 @@ const Navegacion = () => {
   <>
     <Navbar bg="dark" variant="dark">
         <Container className='d-flex justify-content-center'>
-        <Link href="/index">
-          <Navbar.Brand >Navbar</Navbar.Brand>
+          <Nav className="text-center">  
+          <Link href="/index">
+          <a className="nav-link" >catalogo</a>
           </Link>
-          <Nav className="text-center">
           <Link href="/login">
             <a className="nav-link"> Login </a>
             </Link> 

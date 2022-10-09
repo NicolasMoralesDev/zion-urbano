@@ -3,9 +3,10 @@ import React from 'react'
 
 const Encabezado = () => {
   return (
-    <div className="encabezado container-fluid">
-    {/* <Image src='../public/favicon.ico' className='h-25' ></Image> */}
-    <h1 className='text-center'>Zion Urbano</h1>
+    <div className=" d-flex justify-content-center p-3 container-fluid text-light bg-dark">
+    <Image src='/favicon.ico' className='h-25' alt="Logo" width={40} height={48} />
+    <h1 className='text-center m-2  encabezado'>Zion</h1>
+    <h1 className='text-center m-2  encabezado'>Urbano</h1>
     </div>
   )
 }

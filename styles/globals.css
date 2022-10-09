@@ -19,15 +19,17 @@ ul , li{
   box-sizing: border-box;
 }
 
+.encabezado::first-letter{
+  color: #806000 ;
+  font-size: 1.5em;
+}
+
+
 footer{
-  position: absolute;
+  position: relative;
   bottom: 0;
   height: 15em;
   padding: 12px;
-}
-
-footer ul {
-  
 }
 
 #copyright{
