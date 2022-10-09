@@ -11,7 +11,7 @@ const Navegacion = () => {
     <Navbar bg="dark" variant="dark">
         <Container className='d-flex justify-content-center'>
           <Nav className="text-center">  
-          <Link href="/index">
+          <Link href="/">
           <a className="nav-link" >catalogo</a>
           </Link>
           <Link href="/login">

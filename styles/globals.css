@@ -19,6 +19,10 @@ ul , li{
   box-sizing: border-box;
 }
 
+.encabezado{
+ font-family: 'allura';
+}
+
 .encabezado::first-letter{
   color: #806000 ;
   font-size: 1.5em;
@@ -26,16 +30,16 @@ ul , li{
 
 
 footer{
-  position: relative;
+  position: absolute;
   bottom: 0;
   height: 15em;
   padding: 12px;
 }
 
 #copyright{
-  position: relative;
-  bottom: 0;
+  padding: 30px;
   width: 100%;
+  gap:5px;
   display: flex;
   justify-content: center;
 }
