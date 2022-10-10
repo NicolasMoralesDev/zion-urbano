@@ -24,13 +24,13 @@ const admi = () => {
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
+          <td>0</td>
+          <td>vacio</td>
+          <td>vacio</td>
           <td>$</td>
           <td className="w-25 text-center"> 
-          <Button class="btn btn-danger">Eliminar</Button>
-          <Button class="btn btn-success">Modificar</Button>
+          <Button className="btn btn-danger">Eliminar</Button>
+          <Button className="btn btn-success">Modificar</Button>
          </td>
         </tr>
       </tbody>

@@ -23,6 +23,7 @@ ul , li{
  font-family: 'allura';
 }
 
+
 .encabezado::first-letter{
   color: #806000 ;
   font-size: 1.5em;
@@ -30,9 +31,9 @@ ul , li{
 
 
 footer{
-  position: absolute;
+  position: relative;
   bottom: 0;
-  height: 15em;
+  height: 10%;
   padding: 12px;
 }
 
@@ -41,6 +42,7 @@ footer{
   width: 100%;
   gap:5px;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
