@@ -11,16 +11,61 @@ a {
   text-decoration: none;
 }
 
+ul,
+li {
+  list-style: none;
+}
+
 * {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.encabezado {
+  font-family: "allura";
+}
+
+.encabezado::first-letter {
+  color: #806000;
+  font-size: 1.5em;
+}
+
+.catalogo_container{
+  gap: 12px;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  height: 10%;
+  padding: 12px;
+}
+
+#copyright {
+  padding: 30px;
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  display: inline !important;
+}
+
+@media screen and (max-width: 800px) {
+  .footer_list {
+    gap: 15px;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
   }
-  body {
-    color: white;
-    background: black;
+
+  .catalogo_container{
+    gap: 15px;
+    flex-flow: column;
+    align-items: center;
+
   }
+
 }
