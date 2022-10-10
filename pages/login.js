@@ -12,7 +12,7 @@ const login = () => {
         <title>login</title>
     </Head>
     <Layout>
-    <div className="text-left container-fluid mt-5 mb-5 w-25 justify-content-center">
+    <div className="text-left container-fluid mt-5 mb-5  justify-content-center form_container">
     <h2>iniciar sesion</h2>
   <Formik>  
   <Form>
