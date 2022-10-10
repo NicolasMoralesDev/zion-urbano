@@ -11,9 +11,9 @@ export default function Home() {
         <title>catalogo</title>
       </Head>
       <Layout>
-        <div className='container mt-5'>
-          <h2 className='text-center'>Nuestros Producctos:</h2>
-          <div className='row container'>
+        <div className='container mt-5 mb-5 '>
+          <h2 className='text-center'>Nuestros Productos:</h2>
+          <div className='row container catalogo_container'>
             <Card style={{ width: '18rem' }}>
               <Card.Img variant="top" src="holder.js/100px180" />
               <Card.Body>

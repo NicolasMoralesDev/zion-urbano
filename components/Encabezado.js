@@ -4,11 +4,11 @@ import React from 'react'
 const Encabezado = () => {
   return (
     <div className=" d-flex justify-content-center p-3 container-fluid text-light bg-dark">
-    <Image src='/favicon.ico' className='h-25' alt="Logo" width={40} height={48} />
+    <Image src='/vercel.svg' className='h-25' alt="Logo" width={40} height={48} />
     <h1 className='text-center m-2  encabezado'>Zion</h1>
     <h1 className='text-center m-2  encabezado'>Urbano</h1>
     </div>
   )
 }
 
-export default Encabezado
+export default Encabezado;

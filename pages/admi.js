@@ -41,4 +41,4 @@ const admi = () => {
   )
 }
 
-export default admi
+export default admi;
