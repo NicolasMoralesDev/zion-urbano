@@ -10,7 +10,8 @@ const Pie = () => {
     </div>
     <div className='row-cols-1'>
     <h4>Nuestras Redes</h4>
-    <li><a className='nav-link' href='https://www.facebook.com/profile.php?id=100051375237216'>Facebook</a></li>
+    <li><a className='nav-link' href='https://www.facebook.com/profile.php?id=100051375237216'><i className="bi bi-facebook"><i class="bi bi-facebook"></i>
+</i></a></li>
     <li><a className='nav-link' href=''>Instagram</a></li>
     </div>
     <div className='row-cols-1'>

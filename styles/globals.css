@@ -29,8 +29,14 @@ li {
   font-size: 1.5em;
 }
 
+
 .catalogo_container{
+  justify-content: center;
   gap: 12px;
+}
+
+.form_container {
+  max-width: 50%;
 }
 
 footer {
@@ -38,11 +44,12 @@ footer {
   bottom: 0;
   height: 10%;
   padding: 12px;
+  gap: 12px;
 }
 
 #copyright {
-  padding: 30px;
   width: 100%;
+  padding-bottom:5px ;
   gap: 5px;
   display: flex;
   align-items: center;
@@ -68,4 +75,9 @@ footer {
 
   }
 
+  #copyright {
+    text-align: center;
+    font-size: 12px;
+
+  }
 }
