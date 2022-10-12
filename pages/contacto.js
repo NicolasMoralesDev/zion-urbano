@@ -3,9 +3,16 @@ import Layout from '../components/Layout'
 import Head from 'next/head'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import ReCAPTCHA  from 'react-google-recaptcha';
 import { Formik } from 'formik';
 
 const contacto = () => {
+
+  const captchas = () =>{
+
+    console.log(9)
+  };
+
   return (
     <>
     <Head>
@@ -25,6 +32,9 @@ const contacto = () => {
         <Form.Label>Nombre y Apellido</Form.Label>
         <Form.Control type="text" placeholder="ingresa tu nombre" required/>
       </Form.Group>
+      <Form.Group className="mb-3 captcha"   >
+      <ReCAPTCHA   onChange={captchas} sitekey="6Lc6rHciAAAAANehF2WcDx08s9XOEZaKV8WLHLLQ"/>
+    </Form.Group>
       <Button variant="success" type="submit">
         enviar
       </Button>   

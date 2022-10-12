@@ -3,18 +3,18 @@ import Layout from '../components/Layout'
 import Head from 'next/head'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { ReCAPTCHA } from 'react-google-recaptcha';
+import  ReCAPTCHA  from 'react-google-recaptcha';
 import { Formik } from 'formik';
 
-const captcha = useRef(null);
 
-const captchas = () =>{
-  if (captcha.current.getValue()) {
-    
-  }
-};
 
 const login = () => {
+
+const captchas = () =>{
+
+  console.log(9)
+};
+
   return (
     <>
     <Head>
@@ -36,12 +36,11 @@ const login = () => {
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>contraseña</Form.Label>
-        <Form.Control type="password" placeholder="ingrese su contraseña" required />   
+        <Form.Control type="password"   placeholder="ingrese su contraseña" required />   
     </Form.Group>
-    <Form.Group className="mb-3">
-      <ReCAPTCHA  ref={captcha} onChange={()=> captchas()} data-sitekey={'6Le_e3ciAAAAADl7bY85GDzy0ecdkupOjN-G60FV
-       '}/>
-  </Form.Group>
+    <Form.Group className="mb-3" >
+      <ReCAPTCHA className='captcha' onChange={captchas} sitekey="6Lc6rHciAAAAANehF2WcDx08s9XOEZaKV8WLHLLQ"/>
+    </Form.Group>                                               
       <Button variant="success" type="submit">
         entrar
       </Button>

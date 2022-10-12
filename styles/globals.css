@@ -39,6 +39,10 @@ li {
   max-width: 50%;
 }
 
+.captcha > div{
+  max-width: 10% !important;
+}
+
 footer {
   position: relative;
   bottom: 0;
@@ -72,12 +76,10 @@ footer {
     gap: 15px;
     flex-flow: column;
     align-items: center;
-
   }
 
   #copyright {
     text-align: center;
     font-size: 12px;
-
   }
 }
