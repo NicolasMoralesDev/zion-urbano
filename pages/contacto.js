@@ -12,7 +12,7 @@ const contacto = () => {
         <title>contacto</title>
     </Head>
     <Layout>
-    <div className="text-left container-fluid mt-5 mb-5 .form_container justify-content-center">
+    <div className="text-left container-fluid mt-5 mb-5 form_container justify-content-center">
     <h2>contactanos:</h2>
   <Formik>  
   <Form>

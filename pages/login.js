@@ -39,9 +39,9 @@ const login = () => {
         <Form.Control type="password" placeholder="ingrese su contraseña" required />   
     </Form.Group>
     <Form.Group className="mb-3">
-      <ReCAPTCHA  ref={captcha} onChange={()=> captchas} data-sitekey='6LdxWXciAAAAAMDnOfM93lIBniqRuk3IlWxr52Gs
-'></ReCAPTCHA>
-      </Form.Group>
+      <ReCAPTCHA  ref={captcha} onChange={()=> captchas()} data-sitekey={'6Le_e3ciAAAAADl7bY85GDzy0ecdkupOjN-G60FV
+       '}/>
+  </Form.Group>
       <Button variant="success" type="submit">
         entrar
       </Button>
