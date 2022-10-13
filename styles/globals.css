@@ -64,6 +64,14 @@ footer {
   display: inline !important;
 }
 
+.btn_submit_disable{
+  visibility: hidden;
+}
+
+.btn_submit_visible{
+  visibility: visible;
+}
+
 @media screen and (max-width: 800px) {
   .footer_list {
     gap: 15px;
