@@ -11,10 +11,10 @@ export default function Home() {
         <title>catalogo</title>
       </Head>
       <Layout>
-        <div className='container-fluid mt-5 mb-5 '>
-          <h2 className='text-center'>Nuestros Productos:</h2>
+        <div className='container-fluid  background-catalogo '>
+          <h2 className='text-center titulo-productos'>Nuestros Productos:</h2>
           <div className='row containerfluid catalogo_container'>
-            <Card style={{ width: '18rem' }}>
+            <Card id='card-estilo' style={{ width: '18rem' }}>
               <Card.Img variant="top" src="holder.js/100px180" />
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>

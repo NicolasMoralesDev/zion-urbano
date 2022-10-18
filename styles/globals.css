@@ -29,13 +29,34 @@ li {
   font-size: 1.5em;
 }
 
+.background-catalogo{
+  padding: 20px;
+  background:linear-gradient(45deg,#a17b0c, #b98e02, #d6a803 , #8d5e02 ,#be9109, #806000) ;
+  animation: cambiar 9s ease infinite;
+  background-size: 400% 400%;
+}
+.titulo-productos{
+font-family:  'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-weight: 800;
+color: #fff;
+text-shadow: #020201 3px 3px 4px;
+/* box-shadow: #4e3b03 13px   6px 1px; */
+font-size: 2.3rem;
+}
 
 .catalogo_container{
+  padding: 10px;
   justify-content: center;
   gap: 12px;
 }
-
+#card-estilo{
+  background-color: #494844;
+  box-shadow: #383333 6px 4px 6px;
+  color: rgb(203, 203, 203);
+  text-shadow: 3px 3px 3px #000;
+}
 .form_container {
+
   max-width: 50%;
 }
 
@@ -71,7 +92,14 @@ footer {
 .btn_submit_visible{
   visibility: visible;
 }
-
+/* animaciones */
+@keyframes cambiar {
+  0%{background-position: 0 50%;}
+  50%{background-position: 100% 50%;}
+  100%{background-position: 0 50%;}
+  
+}
+/* animaciones */
 @media screen and (max-width: 800px) {
   .footer_list {
     gap: 15px;
@@ -91,3 +119,4 @@ footer {
     font-size: 12px;
   }
 }
+
