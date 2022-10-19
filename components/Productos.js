@@ -6,30 +6,33 @@ import { productosFetch } from '../helper/fetchProductos';
 
 const Productos = (props) => {
   
-  const  [productos, setProductos] = useState(props.data);
-
+  const articulos = props.card.filter(datos => datos.categoria.nombre == props.titulo) 
+  
+  const  [productos, setProductos] = useState(articulos);
 
   return(
     <>
   <div className='row  catalogo_container'>
     <h5 className='text-left titulo-categoria'>{props.titulo}:</h5>
-    { categoria.map(element => {
+     { productos.map(element => {
           
           return (
+            <span key={element._id}>
             <Card id='card-estilo' style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Img variant="top" src={element.img} />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>{element.nombre}</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up the
-                bulk of the card's content.
+              {element.descripcion}
               </Card.Text>
+              <h3>${element.precio}</h3>
               <Button variant="primary">contactate!</Button>
             </Card.Body>
           </Card>
+          </span>
           )
           
-          })}      
+          })} 
           </div>
           </>
           )
@@ -37,11 +40,3 @@ const Productos = (props) => {
 
 export default Productos;
 
-export  const getStaticProps = async () =>{
-  return{
-  props:{
-    title: 'hola',
-    data: await  productosFetch(),
-  },
-  };
-}

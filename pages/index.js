@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import Head from 'next/head'
 import Productos from '../components/Productos';
-import { categoriasFetch } from '../helper/fetchProductos';
+import { categoriasFetch, productosFetch } from '../helper/fetchProductos';
 
 
 
 export default function Home(props) {
 
   const  [categoria, setCategoria] = useState(props.data);
+
 
 
 /*   useEffect(() => {
@@ -25,8 +26,11 @@ export default function Home(props) {
           <h2 className='text-center titulo-productos'>Nuestros Productos:</h2>
         { categoria.map(element => {
           
-          return (<Productos titulo={element.nombre}/>)
-          
+        return (
+          <span key={element._id}>
+          <Productos titulo={element.nombre} card={props.cards}/>
+          </span>
+        )
           })}   
         </div>
       </Layout>
@@ -39,6 +43,7 @@ export  const getStaticProps = async () =>{
   props:{
     title: 'hola',
     data: await  categoriasFetch(),
+    cards: await  productosFetch(),
   },
   };
 }
