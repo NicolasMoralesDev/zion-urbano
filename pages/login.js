@@ -1,85 +1,93 @@
-import { React, useRef } from "react";
-import Layout from "../components/Layout";
-import Head from "next/head";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import ReCAPTCHA from "react-google-recaptcha";
-import { Formik } from "formik";
+import React, { useState } from "react";
+import { login } from "../helper/fetchAuth";
+import Layout from '../components/Layout'
+import Head from 'next/head'
 
-const login = () => {
-  
-  const captcha = useRef(null);
-  const boton = useRef();
 
-  const captchaVencida = () => {
-    boton.current.classList.remove("btn_submit_visible");
-    boton.current.classList.add("btn_submit_disable");
-  };
 
-  const captchas = () => {
-    if (captcha.current) {
-      boton.current.classList.add("btn_submit_visible");
-      boton.current.classList.remove("btn_submit_disable");
+const LoginScreen = () => {
+
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState([]);
+
+
+  const handleSubmit = async (e) => {
+   
+    e.preventDefault();
+    const datos = await login({ email, password });
+
+    if (datos?.token) {
+      localStorage.setItem("token", JSON.stringify(datos.token)); 
+
+      console.log(datos.token);
+      
+
+    } else {
+      if (datos?.errors) {
+        setMessage(datos.errors);
+      } else {
+        setMessage([{ msg: datos.msg }]);
+      }
     }
   };
 
-  return (
-    <>
-      <Head>
-        <title>login</title>
+  return (<>
+     <Head>
+        <title>Iniciar sesion</title>
       </Head>
       <Layout>
-        <div className="text-left container-fluid mt-5 mb-5  justify-content-center form_container">
-          <h2>iniciar sesion</h2>
-          <Formik>
-            <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>correo</Form.Label>
-                <Form.Control
+  <main className="login__main ">
+    <div className="container container-login ">
+      <div className="row login-cuerpo">
+        <div className="col-12 col-md-12 col-sm-12   ">
+          <div className="card estilo-card    ">
+            <div  >
+              <h3 className="text-center mb-4 texto-card">
+             
+                Iniciar sesión
+              </h3>
+              <form className="formulario-conte" onSubmit={handleSubmit}>
+                <input
+                  className="form-control mb-4 p-2 form-card"
                   type="email"
-                  placeholder="ingrese su correo"
-                  required
+                  placeholder="Ingrese su email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  autoFocus={true}
                 />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicText">
-                <Form.Label>usuario</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="ingrese su usuario"
-                  required
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>contraseña</Form.Label>
-                <Form.Control
+                <input
+                  className="form-control mb-4 p-2 form-card"
                   type="password"
-                  placeholder="ingrese su contraseña"
-                  required
+                  placeholder="ingrese constraseña"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <ReCAPTCHA
-                  className="captcha"
-                  ref={captcha}
-                  onExpired={captchaVencida}
-                  onChange={captchas}
-                  sitekey="6Lc6rHciAAAAANehF2WcDx08s9XOEZaKV8WLHLLQ"
-                />
-              </Form.Group>
-              <Button
-                className="btn_submit_disable"
-                ref={boton}
-                variant="success"
-                type="submit"
-              >
-                entrar
-              </Button>
-            </Form>
-          </Formik>
+                <div className="d-flex justify-content-center my-3">
+                  <button className="btn-card">Iniciar</button>
+                </div>
+                <div className="mb-3 text-center  text-secondary registrarse__link ">
+                  
+                </div>{message.length > 0 &&
+                message.map((item, index) => (
+                  <div key={index} className="login__alertas   alert alert-danger " role="alert">
+                    {item.msg}
+                  </div>
+                
+                  
+                ))}
+              </form>
+              
+            </div>
+          </div>
         </div>
-      </Layout>
-    </>
+      </div>
+    </div> 
+     </main>
+     </Layout>
+      </>
   );
 };
 
-export default login;
+export default LoginScreen;

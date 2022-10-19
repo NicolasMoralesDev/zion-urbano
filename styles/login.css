@@ -1,0 +1,69 @@
+.login__main{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(14, 13, 13);
+    margin: 0%; 
+}
+.container-login{
+    width: 100%;
+    height: 100%;
+ 
+    padding: 0%;
+    background:linear-gradient(rgb(40, 37, 37), rgb(28, 22, 22)), rgb(0, 0, 0) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-cuerpo{
+ width: 100%;
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+}
+.estilo-card {
+    width: 600px;
+   
+    background:linear-gradient( rgb(173, 67, 10),rgb(93, 48, 5),rgb(74, 28, 3)) ;
+    box-shadow: 1px 2px 5px 3px rgb(81, 31, 31);
+    padding:20px  30px;
+    margin: 0% auto;
+    border-radius: 0%;
+  
+}
+.texto-card{
+      border-bottom: 4px solid rgb(17, 17, 19);
+     padding-bottom: 13px;
+     font-family:Arial, Helvetica, sans-serif ;
+     font-weight: bold;
+    font-size: 2.4rem;
+    color: rgb(240, 230, 218);
+    text-shadow: 3px 3px 3px rgb(22, 14, 14);
+}
+.form-card{
+    background: rgb(212, 208, 215);
+
+   
+}
+.form-card:focus{ 
+        border-top: 5px solid rgb(193, 102, 37);
+    color: #ddd;
+    background-color: rgb(46, 41, 41);
+    transition: all .4s;
+}
+.btn-card{
+    width: 80%;
+    border: none;
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(6, 4, 2);
+    padding: 7px;
+    background-color: rgba(173, 169, 166, 0.467);
+}
+.btn-card:hover{
+    background-color: rgb(30, 30, 37);
+    transition: all .4s;
+    padding: 10px;
+    color: #fff;
+}
