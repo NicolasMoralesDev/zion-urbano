@@ -23,7 +23,7 @@ const LoginScreen = () => {
 
       console.log(datos.token);
       
-
+      alert("Bienvenida Zulma")
     } else {
       if (datos?.errors) {
         setMessage(datos.errors);
