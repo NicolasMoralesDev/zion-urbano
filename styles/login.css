@@ -1,7 +1,7 @@
 .login__main{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(14, 13, 13);
+    background-color: rgb(157, 151, 151);
     margin: 0%; 
 }
 .container-login{
@@ -75,3 +75,37 @@
     
   }
   /* animaciones */
+
+  @media screen and (max-width:767px){
+    .estilo-card {
+        width: 400px;
+       
+        background:linear-gradient( rgb(13, 12, 3),rgb(5, 4, 2),rgb(0, 0, 0)) ;
+        box-shadow: 1px 2px 5px 3px rgb(81, 31, 31);
+        padding:20px  30px;
+        margin: 0% auto;
+        border-radius: 0%;
+      
+    }
+  }
+  @media screen and (max-width:464px){
+    .estilo-card {
+        width: 300px;
+       
+        background:linear-gradient( rgb(13, 12, 3),rgb(5, 4, 2),rgb(0, 0, 0)) ;
+        box-shadow: 1px 2px 5px 3px rgb(81, 31, 31);
+        padding:20px  30px;
+        margin: 0% auto;
+        border-radius: 0%;
+      
+    }
+    .texto-card{
+        border-bottom: 4px solid rgb(116, 107, 17);
+       padding-bottom: 13px;
+       font-family:Arial, Helvetica, sans-serif ;
+       font-weight: bold;
+      font-size: 2rem;
+      color: rgb(240, 230, 218);
+      text-shadow: 3px 3px 3px rgb(22, 14, 14);
+  }
+  }

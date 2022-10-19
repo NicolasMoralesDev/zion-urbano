@@ -42,7 +42,7 @@ const LoginScreen = () => {
     <div className="container container-login ">
       <div className="row login-cuerpo">
         <div className="col-12 col-md-12 col-sm-12   ">
-          <div className="card estilo-card    ">
+          <div className="card estilo-card  ">
             <div  >
               <h3 className="text-center mb-4 texto-card">
              
