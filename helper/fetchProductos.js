@@ -6,7 +6,6 @@ import axios from 'axios'
 
 export const productosFetch = async () =>{
     const mercaderia = await url.get(`/productos`);
-    console.log(mercaderia.data.productos)
     return mercaderia.data.productos
 };
 

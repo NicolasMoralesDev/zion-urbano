@@ -9,12 +9,7 @@ import { categoriasFetch, productosFetch } from '../helper/fetchProductos';
 export default function Home(props) {
 
   const  [categoria, setCategoria] = useState(props.data);
-
-
-
-/*   useEffect(() => {
-  traerArticulos()  
-  }, []) */
+  
   
   return (
     <>
@@ -27,7 +22,7 @@ export default function Home(props) {
         { categoria.map(element => {
           
         return (
-          <span key={element._id}>
+          <span className='d-inline' key={element._id}>
           <Productos titulo={element.nombre} card={props.cards}/>
           </span>
         )
