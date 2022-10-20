@@ -12,11 +12,12 @@ const Pie = () => {
     <h4>Nuestras Redes</h4>
     <li><a className='nav-link' href='https://www.facebook.com/profile.php?id=100051375237216'><i className="bi bi-facebook"><i className="bi bi-facebook"></i>
 </i></a></li>
+<li><a className='nav-link' href='https://www.facebook.com/profile.php?id=100051375237216'>facebook</a></li>
     <li><a className='nav-link' href=''>Instagram</a></li>
     </div>
     <div className='row-cols-1'>
     <h4>Contacto</h4>
-    <li>+11 - 65759558</li>
+    <li>+54 9 11 6575-9558</li>
     <li>zulma1310@outlook.com.ar</li>
     </div>
   </ul>
