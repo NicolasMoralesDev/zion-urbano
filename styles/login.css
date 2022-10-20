@@ -1,7 +1,7 @@
 .login__main{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(157, 151, 151);
+    background-color: rgb(105, 103, 103);
     margin: 0%; 
 }
 .container-login{
@@ -9,7 +9,7 @@
     height: 100%;
  
     padding: 0%;
-    background:linear-gradient(45deg,#a17b0c, #b98e02, #d6a803 , #8d5e02 ,#be9109, #806000) ;
+    background-color: rgb(119, 117, 117);
     animation: cambiar 9s ease infinite;
     display: flex;
     align-items: center;
