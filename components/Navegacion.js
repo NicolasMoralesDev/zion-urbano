@@ -8,7 +8,10 @@ import Link from 'next/link';
 const Navegacion = () => {
 
   const [isLogued, setIslogued] = useState();
-
+  const cerrarSesion = async () => {
+    localStorage.removeItem("token");
+    location.reload();
+  };
   useEffect(() => {
     const storage = localStorage.getItem('token');
     setIslogued(storage)
@@ -25,7 +28,12 @@ const Navegacion = () => {
             <Link href="/usuario">
               {isLogued ?
                 <a className="nav-link link-navbar "> administrador </a>
-                : <a className="nav-link link-navbar  "> Login </a>}
+                : <a className="nav-link link-navbar  ">Iniciar sesion </a>}
+            </Link>
+            <Link href="/usuario">
+              {isLogued ?
+                <a className="nav-link link-navbar-deslogueo " onClick={()=>cerrarSesion()}>Cerrar sesion</a>
+                : <a className="nav-link link-navbar d-none "> Login </a>}
             </Link>
           </Nav>
         </Container>

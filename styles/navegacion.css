@@ -6,6 +6,22 @@
     border-radius: 2px;
     margin: 0 3px;
 }
+.link-navbar-deslogueo{
+    color:rgb(216, 213, 213) ;
+    font-size: 1.2rem;
+    background-color: rgb(44, 43, 43);
+    border: 2px solid rgb(145, 140, 8);
+    border-radius: 2px;
+    margin: 0 3px;
+}
+.link-navbar-deslogueo:hover{
+    color:rgb(247, 247, 247) ;
+    font-size: 1.2rem;
+    background-color: rgb(17, 15, 15);
+    border: 2px solid rgb(145, 15, 8);
+    border-radius: 2px;
+    margin: 0 3px;
+}
 .link-navbar:hover{
     background-color:  rgba(0, 0, 0, 0.686);
     transform: scale(0.8);

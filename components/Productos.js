@@ -26,7 +26,7 @@ const Productos = (props) => {
               </Card.Text>
               <h3 className='precio-card'>${element.precio}</h3>
 
-              <button class="custom-btn btn-12"><span>Click!!</span><span>Pregunta!</span></button>
+              <button className="custom-btn btn-12"><span>Click!!</span><span>Pregunta!</span></button>
             </Card.Body>
           </Card>
           )     
