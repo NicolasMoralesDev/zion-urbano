@@ -18,7 +18,7 @@ const Pie = () => {
     <div className='row-cols-1'>
     <h4>Contacto</h4>
     <li>+54 9 11 6575-9558</li>
-    <li>zulma1310@outlook.com.ar</li>
+    <li>yolandazulmav@gmail.com</li>
     </div>
   </ul>
   <h6 id='copyright' > © Desarrollado por  <a href="" className='nav-link'>  Nicolas Morales  </a>  y  <a href="" className='nav-link'>Luciano Rivera</a> - 2022</h6>
