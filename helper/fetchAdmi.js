@@ -23,3 +23,24 @@ export const deleteProduct = async (id) =>{
 
     location.reload();
 };
+
+export const editProduct = async ( producto ) =>{
+    const response = await fetch(`${urlBase}/productos/${producto._id}`,
+    {
+        method:"PUT",
+        body: JSON.stringify({
+        img: producto.img,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        descripcion: producto.descripcion ,
+        }),
+        headers: {
+            "Content-type":"application/json; charset=UTF-8",
+            Authorization: JSON.parse(localStorage.getItem("token")),
+        },
+    }
+    );
+
+    location.reload();
+
+};

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-
 import Link from 'next/link';
 
 
@@ -27,9 +26,6 @@ const Navegacion = () => {
               {isLogued ?
                 <a className="nav-link link-navbar "> administrador </a>
                 : <a className="nav-link link-navbar  "> Login </a>}
-            </Link>
-            <Link href="/contacto">
-              <a className='nav-link link-navbar '> contacto </a>
             </Link>
           </Nav>
         </Container>
