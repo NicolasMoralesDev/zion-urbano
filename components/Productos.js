@@ -24,8 +24,9 @@ const Productos = (props) => {
               <Card.Text>
               {element.descripcion}
               </Card.Text>
-              <h3>${element.precio}</h3>
-              <Button variant="primary">contactate!</Button>
+              <h3 className='precio-card'>${element.precio}</h3>
+
+              <button class="custom-btn btn-12"><span>Click!!</span><span>Pregunta!</span></button>
             </Card.Body>
           </Card>
           )     
