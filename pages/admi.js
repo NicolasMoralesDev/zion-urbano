@@ -150,14 +150,14 @@ const admi = (props) => {
             <Form.Group className="mb-3" controlId="formBasicCateg">
               <Form.Label id="categoria">Categoria:</Form.Label>
 
-              <select id="categoria" name="categoria" onChange={handleChange}>
-                <option>Seleccione una categoria:  </option>
-                <option value="REMERAS">REMERAS</option>
-                <option value="BUSOS">BUSOS</option>
-                <option value="CHOMBAS">CHOMBAS</option>
-                <option value="CAMPERAS">CAMPERAS</option>
-                <option value="JHOGGINS ELASTIZADOS DEPORTIVOS">JHOGGINS ELASTIZADOS DEPORTIVOS</option>
-                <option value="JHOGGINS RUSTICOS">JHOGGINS RUSTICOS</option>
+              <select id="categoria" value={productosEditados.categoria} name="categoria" onChange={handleChange}>
+                <option>Seleccione una categoria:</option>
+                <option value="6349e39c62b7f0c2656f8667">REMERAS</option>
+                <option value="6349e3b362b7f0c2656f866f">BUSOS</option>
+                <option value="6349e3a762b7f0c2656f866b">CHOMBAS</option>
+                <option value="6349e3b962b7f0c2656f8673">CAMPERAS</option>
+                <option value="6349e3df62b7f0c2656f867f">JHOGGINS ELASTIZADOS DEPORTIVOS</option>
+                <option value="6349e3d162b7f0c2656f867b">JHOGGINS RUSTICOS</option>
               </select>
 
             </Form.Group>
