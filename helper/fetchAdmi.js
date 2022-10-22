@@ -44,3 +44,25 @@ export const editProduct = async ( producto ) =>{
     location.reload();
 
 };
+
+export const createProduct = async ( productos ) =>{
+    const response = await fetch(`${urlBase}/productos`,
+    {
+        method:"POST",
+        body: JSON.stringify({
+            id:productos._id,
+            img: productos.img,
+            nombre: productos.nombre,
+            precio: productos.precio,
+            categoria: productos.categoria,
+            descripcion: productos.descripcion ,
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            Authorization: JSON.parse(localStorage.getItem("token")),
+        },
+    }
+    ).then((response)=> response.json());
+
+console.log(response.body)
+};

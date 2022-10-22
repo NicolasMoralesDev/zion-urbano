@@ -5,12 +5,11 @@ import Productos from '../components/Productos';
 import { categoriasFetch, productosFetch } from '../helper/fetchProductos';
 
 
-
 export default function Home(props) {
 
   const  [categoria, setCategoria] = useState(props.data);
-  
-  
+
+
   return (
     <>
       <Head>
