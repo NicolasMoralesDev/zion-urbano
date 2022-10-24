@@ -12,7 +12,7 @@ const admi = (props) => {
   const [mostrar, setMostrar] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleCerrar = () => setShow(false);
+  const handleCerrar = () => setMostrar(false);
 
 
   const abrirCerrarModalEditar = () => {
@@ -79,7 +79,7 @@ const admi = (props) => {
           <Form>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>id:</Form.Label>
-              <Form.Control value={productosCreados._id} name="id" onChange={handleCreate} type="string" />
+              <Form.Control value={productosCreados._id} name="id" disabled onChange={handleCreate} type="string" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Nombre:</Form.Label>
@@ -134,7 +134,7 @@ const admi = (props) => {
           <Form>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>id:</Form.Label>
-              <Form.Control value={productosEditados._id} name="id" onChange={handleChange} type="string" />
+              <Form.Control value={productosEditados._id} name="id" disabled onChange={handleChange} type="string" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Nombre:</Form.Label>
