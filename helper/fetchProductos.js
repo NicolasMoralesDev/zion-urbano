@@ -5,12 +5,12 @@ import axios from 'axios'
 });
 
 export const productosFetch = async () =>{
-    const mercaderia = await url.get(`/productos`);
+    const mercaderia = await url.get(`/productos?limite=0&desde=0`);
     return mercaderia.data.productos
 };
 
 export const categoriasFetch = async () =>{
-    const response = await url.get(`/categorias`);
+    const response = await url.get(`/categorias?limite=0&desde=0`);
     return response.data.categorias
 };
 

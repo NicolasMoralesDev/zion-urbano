@@ -6,7 +6,7 @@ import axios from 'axios'
 const urlBase = 'https://zion-backend-a.herokuapp.com/api';
 
 export const admiProductosFetch = async () =>{
-    const mercaderia = await url.get(`/productos`);
+    const mercaderia = await url.get(`/productos?limite=0&desde=0`);
     return mercaderia.data.productos
 };
 
@@ -65,4 +65,6 @@ export const createProduct = async ( productos ) =>{
     ).then((response)=> response.json());
 
 console.log(response.body)
+
+location.reload();
 };

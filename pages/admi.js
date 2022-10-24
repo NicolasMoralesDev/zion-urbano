@@ -70,7 +70,7 @@ const admi = (props) => {
 
   return (
     <>
-
+      
       <Modal show={mostrar} onHide={handleCerrar} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>Crear Producto:</Modal.Title>
@@ -110,7 +110,7 @@ const admi = (props) => {
             </Form.Group>
             <Form.Label>Descripcion:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
-              <textarea name="descripcion" value={productosCreados.descripcion} onChange={handleCreate} className="form-control" id="textAreaExample1" rows="4"  cols="55"  placeholder="Ingrese la descripcion" required></textarea>
+              <textarea name="descripcion" value={productosCreados.descripcion} onChange={handleCreate} className="form-control textarea" id="textAreaExample1" rows="4"  cols="55"   placeholder="Ingrese la descripcion" required></textarea>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -163,7 +163,7 @@ const admi = (props) => {
             </Form.Group>
             <Form.Label>Descripcion:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
-              <textarea name="descripcion"  value={productosEditados.descripcion} onChange={handleChange}  cols="55" className="form-control" id="textAreaExample1" rows="4" placeholder="Ingrese la descripcion" required></textarea>
+              <textarea name="descripcion"  value={productosEditados.descripcion} onChange={handleChange}  cols="55" className="form-control textarea" id="textAreaExample1" rows="4" placeholder="Ingrese la descripcion" required></textarea>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -174,6 +174,7 @@ const admi = (props) => {
           <Button variant="success" onClick={() => editProduct(productosEditados)}>
             Guardar Cambios
           </Button>
+
         </Modal.Footer>
       </Modal>
 
@@ -184,8 +185,8 @@ const admi = (props) => {
         <Table responsive striped bordered hover size="sm">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Imagen</th>
+              <th>Categoria</th> 
               <th>Nombre</th>
               <th>Precio</th>
               <th> <Button onClick={() => abrirCerrarModalCrear()} className="btn btn-success">Crear</Button></th>
@@ -195,8 +196,8 @@ const admi = (props) => {
             {productos.map(element => {
               return (
                 <tr key={element._id}>
-                  <td>{element._id}</td>
                   <td> <img src={element.img} alt={`producto - ${element.nombre}`} width={40} height={48} /></td>
+                  <td>{element.categoria.nombre}</td>  
                   <td>{element.nombre}</td>
                   <td>${element.precio}</td>
                   <td className="w-25 text-center">
