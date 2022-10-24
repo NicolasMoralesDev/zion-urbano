@@ -14,7 +14,7 @@ const Productos = (props) => {
   return (
     <>
       <div className='row  catalogo_container'>
-        <h5 className='text-left titulo-categoria'>{props.titulo}:</h5>
+        <h5 className='text-left titulo-categoria'>{props.titulo}</h5>
         {productos.map(element => {
 
           return (
@@ -22,7 +22,7 @@ const Productos = (props) => {
             <Card id='card-estilo' className='card' style={{ width: '18rem' }}>
               <img variant="top" src={element.img} />
               <Card.Body>
-                <Card.Title>{element.nombre}</Card.Title>
+                <Card.Title className='card__nombre'>{element.nombre}</Card.Title>
                 <Card.Text>
                   {element.descripcion}
                 </Card.Text>

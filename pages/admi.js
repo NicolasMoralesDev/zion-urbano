@@ -110,7 +110,7 @@ const admi = (props) => {
             </Form.Group>
             <Form.Label>Descripcion:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
-              <textarea name="descripcion" value={productosCreados.descripcion} onChange={handleCreate} id="formBasicText" cols="55" rows="7" placeholder="Ingrese la descripcion" required></textarea>
+              <textarea name="descripcion" value={productosCreados.descripcion} onChange={handleCreate} className="form-control" id="textAreaExample1" rows="4"  cols="55"  placeholder="Ingrese la descripcion" required></textarea>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -163,7 +163,7 @@ const admi = (props) => {
             </Form.Group>
             <Form.Label>Descripcion:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
-              <textarea name="descripcion" value={productosEditados.descripcion} onChange={handleChange} id="formBasicText" cols="55" rows="7" placeholder="Ingrese la descripcion" required></textarea>
+              <textarea name="descripcion"  value={productosEditados.descripcion} onChange={handleChange}  cols="55" className="form-control" id="textAreaExample1" rows="4" placeholder="Ingrese la descripcion" required></textarea>
             </Form.Group>
           </Form>
         </Modal.Body>
