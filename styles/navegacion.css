@@ -35,3 +35,21 @@
     background-color: rgb(70, 71, 72);
     transition: all .4s;
 }
+
+@media screen and (max-width:403px){
+    .link-navbar{
+        height:50px;
+
+    }
+    .link-navbar-deslogueo{
+        height: 60px;
+        font-size: 1.1rem;
+    }
+    @media screen and (max-width:375px){
+        .link-navbar-deslogueo{
+            height: 50px;
+            font-size: .9rem;
+        } 
+    }
+    
+}

@@ -1,7 +1,14 @@
 /* 12 */
+
+
 #card-estilo{
     color: beige;
   
+}
+.card__nombre{
+  color: #d8d1d1;
+  text-shadow: 2px 2px 2px rgb(42, 42, 41);
+  font-size: 1.8rem;
 }
 .btn-12{
     position: relative;
