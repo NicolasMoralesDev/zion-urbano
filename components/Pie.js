@@ -21,7 +21,7 @@ const Pie = () => {
     <li>yolandazulmav@gmail.com</li>
     </div>
   </ul>
-  <h6 id='copyright' > © Desarrollado por  <a href="" className='nav-link'>  Nicolas Morales  </a>  y  <a href="" className='nav-link'>Luciano Rivera</a> - 2022</h6>
+  <h6 id='copyright' > © Desarrollado por  <a href="https://www.linkedin.com/in/juannicolasmorales/" className='nav-link text-bg-success'>  Nicolas Morales  </a>  y  <a href="https://www.linkedin.com/in/luciano-rivera-010a5b22b/" className='nav-link text-bg-danger'>Luciano Rivera</a> - 2022</h6>
     </footer>
   )
 }
