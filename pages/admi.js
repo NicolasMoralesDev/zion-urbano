@@ -181,7 +181,7 @@ const admi = (props) => {
       {/* ============================================================================== */}
 
       <div className="container mt-5 mb-5 " >
-        <h2 className="text-center mb-5">¡Bienvenida Zulma!</h2>
+        <h2 className="text-center mb-5 text-light">¡Bienvenida Zulma!</h2>
         <Table responsive striped bordered hover size="sm">
           <thead>
             <tr>

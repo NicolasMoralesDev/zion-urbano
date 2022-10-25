@@ -13,13 +13,13 @@ const Productos = (props) => {
 
   return (
     <>
-      <div className='row  catalogo_container'>
+      <div className='row catalogo_container'>
         <h5 className='text-left titulo-categoria'>{props.titulo}</h5>
         {productos.map(element => {
 
           return (
 
-            <Card id='card-estilo' className='card' style={{ width: '18rem' }}>
+            <Card id='card-estilo' key={element._id} className='card' style={{ width: '18rem' }}>
               <img variant="top" src={element.img} />
               <Card.Body>
                 <Card.Title className='card__nombre'>{element.nombre}</Card.Title>
