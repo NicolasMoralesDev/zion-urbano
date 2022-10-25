@@ -18,7 +18,6 @@ const LoginScreen = () => {
     if (datos?.token) {
       localStorage.setItem("token", JSON.stringify(datos.token));
 
-      console.log(datos.token);
 
       alert("Bienvenida Zulma")
     } else {
