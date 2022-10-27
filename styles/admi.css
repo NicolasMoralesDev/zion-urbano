@@ -1,0 +1,11 @@
+body{
+        background-color: rgb(194, 157, 24);
+}
+
+table{
+        background-color: white;
+}
+.textarea{
+   
+        resize: none;
+}

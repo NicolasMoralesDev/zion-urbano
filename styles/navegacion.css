@@ -1,0 +1,55 @@
+.link-navbar{
+    color:rgb(216, 213, 213) ;
+    font-size: 1.2rem;
+    background-color: rgb(44, 43, 43);
+    border: 2px solid rgb(145, 140, 8);
+    border-radius: 2px;
+    margin: 0 3px;
+}
+.link-navbar-deslogueo{
+    color:rgb(216, 213, 213) ;
+    font-size: 1.2rem;
+    background-color: rgb(44, 43, 43);
+    border: 2px solid rgb(145, 140, 8);
+    border-radius: 2px;
+    margin: 0 3px;
+}
+.link-navbar-deslogueo:hover{
+    color:rgb(247, 247, 247) ;
+    font-size: 1.2rem;
+    background-color: rgb(17, 15, 15);
+    border: 2px solid rgb(145, 15, 8);
+    border-radius: 2px;
+    margin: 0 3px;
+}
+.link-navbar:hover{
+    background-color:  rgba(0, 0, 0, 0.686);
+    transform: scale(0.8);
+    color: rgb(248, 248, 242);
+    font-size: 1.4rem;
+    transition: all .4s;
+}
+.link-navbar:active{
+    transform: scale(1.2);
+    margin: 0 15px;
+    background-color: rgb(70, 71, 72);
+    transition: all .4s;
+}
+
+@media screen and (max-width:403px){
+    .link-navbar{
+        height:50px;
+
+    }
+    .link-navbar-deslogueo{
+        height: 60px;
+        font-size: 1.1rem;
+    }
+    @media screen and (max-width:375px){
+        .link-navbar-deslogueo{
+            height: 50px;
+            font-size: .9rem;
+        } 
+    }
+    
+}

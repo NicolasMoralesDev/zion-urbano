@@ -1,0 +1,111 @@
+.login__main{
+    width: 100;
+    height: 100vh;
+    background-color: rgb(105, 103, 103);
+    margin: 0%; 
+}
+.container-login{
+    width: 100%;
+    height: 100%;
+ 
+    padding: 0%;
+    background-color: rgb(119, 117, 117);
+    animation: cambiar 9s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-cuerpo{
+ width: 100%;
+ height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+}
+.estilo-card {
+    width: 600px;
+   
+    background:linear-gradient( rgb(13, 12, 3),rgb(5, 4, 2),rgb(0, 0, 0)) ;
+    box-shadow: 1px 2px 5px 3px rgb(81, 31, 31);
+    padding:20px  30px;
+    margin: 0% auto;
+    border-radius: 0%;
+  
+}
+.texto-card{
+      border-bottom: 4px solid rgb(116, 107, 17);
+     padding-bottom: 13px;
+     font-family:Arial, Helvetica, sans-serif ;
+     font-weight: bold;
+    font-size: 2.4rem;
+    color: rgb(240, 230, 218);
+    text-shadow: 3px 3px 3px rgb(22, 14, 14);
+}
+.form-card{
+    background: rgb(212, 208, 215);
+
+   
+}
+.form-card:focus{ 
+        border-top: 5px solid rgb(221, 203, 11);
+    color: #ddd;
+    background-color: rgb(46, 41, 41);
+    transition: all .4s;
+}
+.btn-card{
+    width: 80%;
+    border: none;
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(6, 4, 2);
+    padding: 7px;
+    background-color: rgb(195, 176, 2);
+}
+.btn-card:hover{
+    background-color: rgb(121, 121, 121);
+    transition: all .4s;
+    padding: 10px;
+    color: #fff;
+}/* animaciones */
+@keyframes cambiar {
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+    
+  }
+  /* animaciones */
+
+  @media screen and (max-width:767px){
+    .estilo-card {
+        width: 400px;
+       
+        background:linear-gradient( rgb(13, 12, 3),rgb(5, 4, 2),rgb(0, 0, 0)) ;
+        box-shadow: 1px 2px 5px 3px rgb(81, 31, 31);
+        padding:20px  30px;
+        margin: 0% auto;
+        border-radius: 0%;
+      
+    }
+  }
+  @media screen and (max-width:464px){
+    .estilo-card {
+        width: 300px;
+       
+        background:linear-gradient( rgb(13, 12, 3),rgb(5, 4, 2),rgb(0, 0, 0)) ;
+        box-shadow: 1px 2px 5px 3px rgb(81, 31, 31);
+        padding:20px  30px;
+        margin: 0% auto;
+        border-radius: 0%;
+      
+    }
+    .texto-card{
+        border-bottom: 4px solid rgb(116, 107, 17);
+       padding-bottom: 13px;
+       font-family:Arial, Helvetica, sans-serif ;
+       font-weight: bold;
+      font-size: 2rem;
+      color: rgb(240, 230, 218);
+      text-shadow: 3px 3px 3px rgb(22, 14, 14);
+  }
+  }
