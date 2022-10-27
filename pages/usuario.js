@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from '../components/Layout'
 import Head from 'next/head'
 import LoginScreen from "../pages/login";
-import Admi from "../pages/Admi";
+import Admi from "./admi";
 import { admiProductosFetch } from '../helper/fetchAdmi';
 
 
