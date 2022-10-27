@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import Head from 'next/head'
 import LoginScreen from "../pages/login";
 import { admiProductosFetch } from '../helper/fetchAdmi';
-import Admi from "./Admi";
+import Admi from "../components/Admi";
 
 
 const Usuario = (props) => {
