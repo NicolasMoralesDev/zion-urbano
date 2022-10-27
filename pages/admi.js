@@ -8,7 +8,7 @@ import { createProduct, deleteProduct, editProduct } from '../helper/fetchAdmi';
 import { upload } from '../firebase/config';
 
 
-const admi = (props) => {
+const Admi = (props) => {
   const fileTypes = ["JPG", "PNG", "GIF"];
 
 
@@ -217,4 +217,4 @@ const admi = (props) => {
   )
 }
 
-export default admi;
+export default Admi;
