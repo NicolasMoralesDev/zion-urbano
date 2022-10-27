@@ -9,8 +9,8 @@ import { upload } from '../firebase/config';
 
 
 const Admi = (props) => {
-  const fileTypes = ["JPG", "PNG", "GIF"];
 
+  const fileTypes = ["JPG", "PNG", "GIF"];
 
   const [show, setShow] = useState(false);
   const [mostrar, setMostrar] = useState(false);
