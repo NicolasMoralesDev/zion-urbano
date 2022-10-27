@@ -156,6 +156,7 @@ const Admi = (props) => {
             <Form.Group className="mb-3" controlId="formBasicImg">
             <input type="file" name='file' onChange={editimg} />
             </Form.Group>
+            
             <Form.Group className="mb-3" controlId="formBasicCateg">
               <Form.Label id="categoria">Categoria:</Form.Label>
 

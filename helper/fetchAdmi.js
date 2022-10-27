@@ -63,8 +63,13 @@ export const createProduct = async (productos) => {
                 Authorization: JSON.parse(localStorage.getItem("token")),
             },
         }
+        
     ).then((response) => response.json());
-    location.reload();
+
+
+    location.reload()
+/* console.log(productos)
+console.log(response) */
 
 
 };
