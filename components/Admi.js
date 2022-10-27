@@ -56,9 +56,14 @@ const Admi = (props) => {
     setProductosEditados(datos);
   };
 
-  const handleimg = async (files, funcion) => {
+  const handleimg = async (files) => {
     const url = await upload(files);
-    funcion.img = toString( url);
+    productosCreados.img = toString( url);
+  }
+
+  const editimg = async (files) => {
+    const url = await upload(files);
+    productosEditados.img = toString( url);
   }
 
   const handleChange = (e) => {
@@ -95,7 +100,7 @@ const Admi = (props) => {
               <Form.Control type="number" name='precio' value={productosCreados.precio} onChange={handleCreate} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-              <FileUploader name='file' handleChange={ handleimg(productosCreados)} types={fileTypes} />
+              <FileUploader name='file' handleChange={ handleimg} types={fileTypes} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
 
@@ -148,7 +153,7 @@ const Admi = (props) => {
               <Form.Control type="number" name='precio' value={productosEditados.precio} onChange={handleChange} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-            <FileUploader name='file' handleChange={ handleimg(productosEditados)} types={fileTypes} />
+            <FileUploader name='file' handleChange={editimg} types={fileTypes} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
               <Form.Label id="categoria">Categoria:</Form.Label>
