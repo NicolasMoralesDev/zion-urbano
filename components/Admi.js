@@ -58,12 +58,12 @@ const Admi = (props) => {
 
   const handleimg = async (files) => {
     const url = await upload(files);
-    productosCreados.img = toString( url);
+    productosCreados.img = url;
   }
 
   const editimg = async (files) => {
     const url = await upload(files);
-    productosEditados.img = toString( url);
+    productosEditados.img = url;
   }
 
   const handleChange = (e) => {
