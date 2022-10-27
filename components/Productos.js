@@ -20,7 +20,7 @@ const Productos = (props) => {
           return (
 
             <Card id='card-estilo' key={element._id} className='card' style={{ width: '18rem' }}>
-              <img variant="top" src={element.img} />
+              <img variant="top" className='img-product' src={element.img} />
               <Card.Body>
                 <Card.Title className='card__nombre'>{element.nombre}</Card.Title>
                 <Card.Text>

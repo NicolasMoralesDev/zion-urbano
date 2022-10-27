@@ -21,7 +21,7 @@ export const deleteProduct = async (id) => {
             },
         }
     );
-
+        alert("prenda Borrada correctamente");
     location.reload();
 };
 
@@ -41,7 +41,7 @@ export const editProduct = async (producto) => {
             },
         }
     );
-
+        alert("prenda Modificada correctamente");
     location.reload();
 
 };
@@ -66,7 +66,7 @@ export const createProduct = async (productos) => {
         
     ).then((response) => response.json());
 
-
+    alert(" Nueva prenda Creada "); 
     location.reload()
 /* console.log(productos)
 console.log(response) */
