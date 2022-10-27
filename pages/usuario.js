@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Layout from '../components/Layout'
 import Head from 'next/head'
 import LoginScreen from "../pages/login";
-import Admi from "./admi";
 import { admiProductosFetch } from '../helper/fetchAdmi';
+import Admi from "../components/Admi";
 
 
 const Usuario = (props) => {
@@ -39,7 +39,7 @@ const Usuario = (props) => {
 export default Usuario;
 
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     return {
       props: {
         title: 'hola',

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { FileUploader } from "react-drag-drop-files";
 import Table from 'react-bootstrap/Table';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
@@ -9,7 +8,6 @@ import { createProduct, deleteProduct, editProduct } from '../helper/fetchAdmi';
 
 const Admi = (props) => {
 
-  const fileTypes = ["JPG", "PNG", "GIF"];
 
   const [show, setShow] = useState(false);
   const [mostrar, setMostrar] = useState(false);
@@ -58,6 +56,15 @@ const Admi = (props) => {
   const crearProductos = () => {
     abrirCerrarModalCrear();
   };
+  const handleimg = async (e) => {
+    const url = await upload(e.target.files[0]);
+    productosCreados.img = url;
+  }
+
+  const editimg = async (e) => {
+    const url = await upload(e.target.files[0]);
+    productosEditados.img = url;
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -93,7 +100,7 @@ const Admi = (props) => {
               <Form.Control type="number" name='precio' value={productosCreados.precio} onChange={handleCreate} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-               <FileUploader type="string"  handleCreate={handleCreate}  name="img" types={fileTypes} />
+            <input type="file" name='file' onChange={handleimg} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
        
@@ -147,7 +154,7 @@ const Admi = (props) => {
               <Form.Control type="number" name='precio' value={productosEditados.precio} onChange={handleChange} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-
+            <input type="file" name='file' onChange={editimg} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
               <Form.Label id="categoria">Categoria:</Form.Label>
