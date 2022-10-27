@@ -204,8 +204,8 @@ const admi = (props) => {
                   <td>{element.nombre}</td>
                   <td>${element.precio}</td>
                   <td className="w-25 text-center">
-                    <Button value={element._id} onClick={eliminarProducto} className="btn btn-danger">Eliminar</Button>
-                    <Button value={element._id} onClick={() => actualizarProductos(element)} className="btn btn-success">Modificar</Button>
+                    <Button value={element._id} onClick={eliminarProducto} className="btn btn-danger m-2 btn-admi">Eliminar</Button>
+                    <Button value={element._id} onClick={() => actualizarProductos(element)} className="btn btn-success  m-2 btn-admi">Modificar</Button>
                   </td>
                 </tr>
               )

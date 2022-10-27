@@ -28,7 +28,9 @@ li {
   color: #806000;
   font-size: 1.5em;
 }
-
+.media-queri{
+  margin: auto 5px;
+}
 .background-catalogo{
   padding: 20px;
   background:linear-gradient(45deg,#a17b0c, #b98e02, #d6a803 , #8d5e02 ,#be9109, #806000) ;
