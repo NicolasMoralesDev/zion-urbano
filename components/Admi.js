@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { FileUploader } from "react-drag-drop-files";
 import Table from 'react-bootstrap/Table';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
@@ -10,7 +9,6 @@ import { upload } from '../firebase/config';
 
 const Admi = (props) => {
 
-  const fileTypes = ["JPG", "PNG", "GIF"];
 
   const [show, setShow] = useState(false);
   const [mostrar, setMostrar] = useState(false);
@@ -56,13 +54,13 @@ const Admi = (props) => {
     setProductosEditados(datos);
   };
 
-  const handleimg = async (files) => {
-    const url = await upload(files);
+  const handleimg = async (e) => {
+    const url = await upload(e.target.files[0]);
     productosCreados.img = url;
   }
 
-  const editimg = async (files) => {
-    const url = await upload(files);
+  const editimg = async (e) => {
+    const url = await upload(e.target.files[0]);
     productosEditados.img = url;
   }
 
@@ -100,7 +98,7 @@ const Admi = (props) => {
               <Form.Control type="number" name='precio' value={productosCreados.precio} onChange={handleCreate} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-              <FileUploader name='file' handleChange={ handleimg} types={fileTypes} />
+            <input type="file" name='file' onChange={handleimg} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
 
@@ -153,7 +151,7 @@ const Admi = (props) => {
               <Form.Control type="number" name='precio' value={productosEditados.precio} onChange={handleChange} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-            <FileUploader name='file' handleChange={editimg} types={fileTypes} />
+            <input type="file" name='file' onChange={editimg} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
               <Form.Label id="categoria">Categoria:</Form.Label>
