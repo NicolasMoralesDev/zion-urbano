@@ -93,7 +93,6 @@ const Admi = (props) => {
               <Form.Control type="number" name='precio' value={productosCreados.precio} onChange={handleCreate} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-            {/* <Form.Control type="string" name='img' value={productosCreados.img} onChange={handleCreate} placeholder="ingrese la imagen" required /> */}
                <FileUploader type="string"  handleCreate={handleCreate}  name="img" types={fileTypes} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
