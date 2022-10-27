@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { createProduct, deleteProduct, editProduct } from '../helper/fetchAdmi';
+import { upload } from '../firebase/config';
 
 
 const Admi = (props) => {
