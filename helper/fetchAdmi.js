@@ -63,6 +63,7 @@ export const createProduct = async (productos) => {
                 Authorization: JSON.parse(localStorage.getItem("token")),
             },
         }
+        
     ).then((response) => response.json());
 
 console.log(productos)
