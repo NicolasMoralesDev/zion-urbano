@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Layout from '../components/Layout'
 import Head from 'next/head'
 import LoginScreen from "../pages/login";
-import Admi from "./Admi";
 import { admiProductosFetch } from '../helper/fetchAdmi';
+import Admi from "./Admi";
 
 
 const Usuario = (props) => {
