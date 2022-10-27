@@ -5,7 +5,6 @@ import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { createProduct, deleteProduct, editProduct } from '../helper/fetchAdmi';
-import { upload } from '../firebase/config';
 
 
 const Admi = (props) => {
@@ -56,10 +55,9 @@ const Admi = (props) => {
     setProductosEditados(datos);
   };
 
-  const handleimg = async (files, funcion) => {
-    const url = await upload(files);
-    funcion.img = toString( url);
-  }
+  const crearProductos = () => {
+    abrirCerrarModalCrear();
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -75,7 +73,7 @@ const Admi = (props) => {
 
   return (
     <>
-
+      
       <Modal show={mostrar} onHide={handleCerrar} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>Crear Producto:</Modal.Title>
@@ -95,10 +93,11 @@ const Admi = (props) => {
               <Form.Control type="number" name='precio' value={productosCreados.precio} onChange={handleCreate} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-              <FileUploader name='file' handleChange={ handleimg(productosCreados)} types={fileTypes} />
+            {/* <Form.Control type="string" name='img' value={productosCreados.img} onChange={handleCreate} placeholder="ingrese la imagen" required /> */}
+               <FileUploader type="string"  handleCreate={handleCreate}  name="img" types={fileTypes} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
-
+       
               <Form.Label id="categoria">Categoria:  </Form.Label>
 
               <select id="categoria" name="categoria" onChange={handleCreate}>
@@ -114,7 +113,7 @@ const Admi = (props) => {
             </Form.Group>
             <Form.Label>Descripcion:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
-              <textarea name="descripcion" value={productosCreados.descripcion} onChange={handleCreate} className="form-control textarea" id="textAreaExample1" rows="4" cols="55" placeholder="Ingrese la descripcion" required></textarea>
+              <textarea name="descripcion" value={productosCreados.descripcion} onChange={handleCreate} className="form-control textarea" id="textAreaExample1" rows="4"  cols="55"   placeholder="Ingrese la descripcion" required></textarea>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -127,6 +126,7 @@ const Admi = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
+
       {/* ==================================================================================== */}
 
       <Modal show={show} onHide={handleClose} animation={false}>
@@ -148,10 +148,11 @@ const Admi = (props) => {
               <Form.Control type="number" name='precio' value={productosEditados.precio} onChange={handleChange} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-            <FileUploader name='file' handleChange={ handleimg(productosEditados)} types={fileTypes} />
+
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
               <Form.Label id="categoria">Categoria:</Form.Label>
+
               <select id="categoria" value={productosEditados.categoria} name="categoria" onChange={handleChange}>
                 <option>Seleccione una categoria:</option>
                 <option value="6349e39c62b7f0c2656f8667">REMERAS</option>
@@ -165,7 +166,7 @@ const Admi = (props) => {
             </Form.Group>
             <Form.Label>Descripcion:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
-              <textarea name="descripcion" value={productosEditados.descripcion} onChange={handleChange} cols="55" className="form-control textarea" id="textAreaExample1" rows="4" placeholder="Ingrese la descripcion" required></textarea>
+              <textarea name="descripcion"  value={productosEditados.descripcion} onChange={handleChange}  cols="55" className="form-control textarea" id="textAreaExample1" rows="4" placeholder="Ingrese la descripcion" required></textarea>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -188,7 +189,7 @@ const Admi = (props) => {
           <thead>
             <tr>
               <th>Imagen</th>
-              <th>Categoria</th>
+              <th>Categoria</th> 
               <th>Nombre</th>
               <th>Precio</th>
               <th> <Button onClick={() => abrirCerrarModalCrear()} className="btn btn-success">Crear</Button></th>
@@ -199,7 +200,7 @@ const Admi = (props) => {
               return (
                 <tr key={element._id}>
                   <td> <img src={element.img} alt={`producto - ${element.nombre}`} width={40} height={48} /></td>
-                  <td>{element.categoria.nombre}</td>
+                  <td>{element.categoria.nombre}</td>  
                   <td>{element.nombre}</td>
                   <td>${element.precio}</td>
                   <td className="w-25 text-center">
