@@ -65,6 +65,6 @@ export const createProduct = async (productos) => {
         }
     ).then((response) => response.json());
 console.log(productos.img);
-// location.reload();
+ location.reload();
 
 };
