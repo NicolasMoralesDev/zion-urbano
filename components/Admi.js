@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { FileUploader } from "react-drag-drop-files";
 import Table from 'react-bootstrap/Table';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
@@ -7,8 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { createProduct, deleteProduct, editProduct } from '../helper/fetchAdmi';
 
 
-const admi = (props) => {
-  const fileTypes = ["JPG", "PNG", "GIF"];
+const Admi = (props) => {
 
 
   const [show, setShow] = useState(false);
@@ -58,6 +56,15 @@ const admi = (props) => {
   const crearProductos = () => {
     abrirCerrarModalCrear();
   };
+  const handleimg = async (e) => {
+    const url = await upload(e.target.files[0]);
+    productosCreados.img = url;
+  }
+
+  const editimg = async (e) => {
+    const url = await upload(e.target.files[0]);
+    productosEditados.img = url;
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -93,8 +100,7 @@ const admi = (props) => {
               <Form.Control type="number" name='precio' value={productosCreados.precio} onChange={handleCreate} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-            {/* <Form.Control type="string" name='img' value={productosCreados.img} onChange={handleCreate} placeholder="ingrese la imagen" required /> */}
-               <FileUploader type="string"  handleCreate={handleCreate}  name="img" types={fileTypes} />
+            <input type="file" name='file' onChange={handleimg} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
        
@@ -148,7 +154,7 @@ const admi = (props) => {
               <Form.Control type="number" name='precio' value={productosEditados.precio} onChange={handleChange} placeholder="ingrese el precio" required />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-
+            <input type="file" name='file' onChange={editimg} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
               <Form.Label id="categoria">Categoria:</Form.Label>
@@ -218,4 +224,4 @@ const admi = (props) => {
   )
 }
 
-export default admi;
+export default Admi;
