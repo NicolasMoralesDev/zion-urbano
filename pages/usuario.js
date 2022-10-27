@@ -39,7 +39,7 @@ const Usuario = (props) => {
 export default Usuario;
 
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     return {
       props: {
         title: 'hola',

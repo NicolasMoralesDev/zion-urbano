@@ -32,7 +32,7 @@ export default function Home(props) {
   )
 }
 
-export  const getStaticProps = async () =>{
+export  const getServerSideProps = async () =>{
   return{
   props:{
     title: 'hola',
