@@ -66,7 +66,8 @@ export const createProduct = async (productos) => {
         
     ).then((response) => response.json());
 
-console.log(productos)
-console.log(response)
+    location.reload()
+/* console.log(productos)
+console.log(response) */
 
 };
