@@ -110,11 +110,11 @@ const Admi = (props) => {
               <select id="categoria" name="categoria" onChange={handleCreate}>
                 <option>Seleccione una categoria:</option>
                 <option value="6349e39c62b7f0c2656f8667">REMERAS</option>
-                <option value="6349e3b362b7f0c2656f866f">BUSOS</option>
+                <option value="6349e3b362b7f0c2656f866f">BUZOS</option>
                 <option value="6349e3a762b7f0c2656f866b">CHOMBAS</option>
                 <option value="6349e3b962b7f0c2656f8673">CAMPERAS</option>
-                <option value="6349e3df62b7f0c2656f867f">JHOGGINS ELASTIZADOS DEPORTIVOS</option>
-                <option value="6349e3d162b7f0c2656f867b">JHOGGINS RUSTICOS</option>
+                <option value="6349e3df62b7f0c2656f867f">SHORT ELASTIZADOS DEPORTIVOS</option>
+                <option value="6349e3d162b7f0c2656f867b">JHOGGINS ELASTIZADOS DEPORTIVOS</option>
               </select>
 
             </Form.Group>
@@ -164,11 +164,11 @@ const Admi = (props) => {
               <select id="categoria" value={productosEditados.categoria} name="categoria" onChange={handleChange}>
                 <option>Seleccione una categoria:</option>
                 <option value="6349e39c62b7f0c2656f8667">REMERAS</option>
-                <option value="6349e3b362b7f0c2656f866f">BUSOS</option>
+                <option value="6349e3b362b7f0c2656f866f">BUZOS</option>
                 <option value="6349e3a762b7f0c2656f866b">CHOMBAS</option>
                 <option value="6349e3b962b7f0c2656f8673">CAMPERAS</option>
-                <option value="6349e3df62b7f0c2656f867f">JHOGGINS ELASTIZADOS DEPORTIVOS</option>
-                <option value="6349e3d162b7f0c2656f867b">JHOGGINS RUSTICOS</option>
+                <option value="6349e3df62b7f0c2656f867f">SHORT ELASTIZADOS DEPORTIVOS</option>
+                <option value="6349e3d162b7f0c2656f867b">JHOGGINS ELASTIZADOS DEPORTIVOS</option>
               </select>
 
             </Form.Group>
