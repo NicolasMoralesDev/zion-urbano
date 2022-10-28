@@ -132,7 +132,7 @@ const Admi = (props) => {
                 <option>Seleccione una categoria:</option>
 
                 {props.categ.map((element) => {
-                  return <option value={element._id}>{element.nombre}</option>;
+                  return <option value={element._id} key={element._id}>{element.nombre}</option>;
                 })}
               </select>
             </Form.Group>
@@ -220,7 +220,7 @@ const Admi = (props) => {
               >
                 <option>Seleccione una categoria:</option>
                 {props.categ.map((element) => {
-                  return <option value={element._id}>{element.nombre}</option>;
+                  return <option value={element._id} key={element._id}>{element.nombre}</option>;
                 })}
               </select>
             </Form.Group>
