@@ -10,7 +10,6 @@ const Productos = (props) => {
   };
 
   const [productos, setProductos] = useState(articulos);
-  console.log(productos.filter(datos => datos.categoria.nombre == props.titulo))
 
   return (
     <>
