@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
-import Table from 'react-bootstrap/Table';
-import { Button } from 'react-bootstrap';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-import { createProduct, deleteProduct, editProduct } from '../helper/fetchAdmi';
-import { upload } from '../firebase/config';
-
+import React, { useState } from "react";
+import Table from "react-bootstrap/Table";
+import { Button } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
+import { createProduct, deleteProduct, editProduct } from "../helper/fetchAdmi";
+import { upload } from "../firebase/config";
+import ModalCrearCategoria from "./ModalCrearCategoria";
 
 const Admi = (props) => {
-
-
   const [show, setShow] = useState(false);
   const [mostrar, setMostrar] = useState(false);
+  const [crearCategoria, setCrearCategoria] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleCerrar = () => setMostrar(false);
+  const handleCerrarCategoria = () => setCrearCategoria(false);
 
+  const abrirCerrarModalCategoria = () => {
+    setCrearCategoria(!crearCategoria);
+  };
 
   const abrirCerrarModalEditar = () => {
     setShow(!show);
@@ -26,6 +29,7 @@ const Admi = (props) => {
   };
 
   const [productos, setProductos] = useState(props.productos);
+
   const [productosEditados, setProductosEditados] = useState({
     _id: "",
     img: "",
@@ -54,34 +58,32 @@ const Admi = (props) => {
     setProductosEditados(datos);
   };
 
-  const crearProductos = () => {
-    abrirCerrarModalCrear();
-  };
   const handleimg = async (e) => {
     const url = await upload(e.target.files[0]);
     productosCreados.img = url;
-  }
+  };
 
   const editimg = async (e) => {
     const url = await upload(e.target.files[0]);
     productosEditados.img = url;
-  }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setProductosEditados((prevState) =>
-      ({ ...prevState, [name]: value }));
+    setProductosEditados((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleCreate = (e) => {
     const { name, value } = e.target;
-    setProductosCreados((prevState) =>
-      ({ ...prevState, [name]: value }));
+    setProductosCreados((prevState) => ({ ...prevState, [name]: value }));
   };
 
   return (
     <>
-      
+      <ModalCrearCategoria
+        handleCerrarCategoria={handleCerrarCategoria}
+        crearCategoria={crearCategoria}
+      />
       <Modal show={mostrar} onHide={handleCerrar} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>Crear Producto:</Modal.Title>
@@ -90,37 +92,63 @@ const Admi = (props) => {
           <Form>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>id:</Form.Label>
-              <Form.Control value={productosCreados._id} name="id" disabled onChange={handleCreate} type="string" />
+              <Form.Control
+                value={productosCreados._id}
+                name="id"
+                disabled
+                onChange={handleCreate}
+                type="string"
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Nombre:</Form.Label>
-              <Form.Control value={productosCreados.nombre} name='nombre' onChange={handleCreate} type="text" placeholder="Ingrese el nombre" required />
+              <Form.Control
+                value={productosCreados.nombre}
+                name="nombre"
+                onChange={handleCreate}
+                type="text"
+                placeholder="Ingrese el nombre"
+                required
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicNumber">
               <Form.Label>Precio:</Form.Label>
-              <Form.Control type="number" name='precio' value={productosCreados.precio} onChange={handleCreate} placeholder="ingrese el precio" required />
+              <Form.Control
+                type="number"
+                name="precio"
+                value={productosCreados.precio}
+                onChange={handleCreate}
+                placeholder="ingrese el precio"
+                required
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-            <input type="file" name='file' onChange={handleimg} />
+              <input type="file" name="file" onChange={handleimg} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCateg">
-       
-              <Form.Label id="categoria">Categoria:  </Form.Label>
+              <Form.Label id="categoria">Categoria: </Form.Label>
 
               <select id="categoria" name="categoria" onChange={handleCreate}>
                 <option>Seleccione una categoria:</option>
-                <option value="6349e39c62b7f0c2656f8667">REMERAS</option>
-                <option value="6349e3b362b7f0c2656f866f">BUZOS</option>
-                <option value="6349e3a762b7f0c2656f866b">CHOMBAS</option>
-                <option value="6349e3b962b7f0c2656f8673">CAMPERAS</option>
-                <option value="6349e3df62b7f0c2656f867f">SHORT ELASTIZADOS DEPORTIVOS</option>
-                <option value="6349e3d162b7f0c2656f867b">JHOGGINS ELASTIZADOS DEPORTIVOS</option>
-              </select>
 
+                {props.categ.map((element) => {
+                  return <option value={element._id}>{element.nombre}</option>;
+                })}
+              </select>
             </Form.Group>
             <Form.Label>Descripcion:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
-              <textarea name="descripcion" value={productosCreados.descripcion} onChange={handleCreate} className="form-control textarea" id="textAreaExample1" rows="4"  cols="55"   placeholder="Ingrese la descripcion" required></textarea>
+              <textarea
+                name="descripcion"
+                value={productosCreados.descripcion}
+                onChange={handleCreate}
+                className="form-control textarea"
+                id="textAreaExample1"
+                rows="4"
+                cols="55"
+                placeholder="Ingrese la descripcion"
+                required
+              ></textarea>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -128,7 +156,10 @@ const Admi = (props) => {
           <Button variant="danger" onClick={handleCerrar}>
             cancelar
           </Button>
-          <Button variant="success" onClick={() => createProduct(productosCreados)}>
+          <Button
+            variant="success"
+            onClick={() => createProduct(productosCreados)}
+          >
             Crear
           </Button>
         </Modal.Footer>
@@ -144,37 +175,68 @@ const Admi = (props) => {
           <Form>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>id:</Form.Label>
-              <Form.Control value={productosEditados._id} name="id" disabled onChange={handleChange} type="string" />
+              <Form.Control
+                value={productosEditados._id}
+                name="id"
+                disabled
+                onChange={handleChange}
+                type="string"
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicText">
               <Form.Label>Nombre:</Form.Label>
-              <Form.Control value={productosEditados.nombre} name='nombre' onChange={handleChange} type="text" placeholder="Ingrese el nombre" required />
+              <Form.Control
+                value={productosEditados.nombre}
+                name="nombre"
+                onChange={handleChange}
+                type="text"
+                placeholder="Ingrese el nombre"
+                required
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicNumber">
               <Form.Label>Precio:</Form.Label>
-              <Form.Control type="number" name='precio' value={productosEditados.precio} onChange={handleChange} placeholder="ingrese el precio" required />
+              <Form.Control
+                type="number"
+                name="precio"
+                value={productosEditados.precio}
+                onChange={handleChange}
+                placeholder="ingrese el precio"
+                required
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicImg">
-            <input type="file" name='file' onChange={editimg} />
+              <input type="file" name="file" onChange={editimg} />
             </Form.Group>
-            
+
             <Form.Group className="mb-3" controlId="formBasicCateg">
               <Form.Label id="categoria">Categoria:</Form.Label>
 
-              <select id="categoria" value={productosEditados.categoria} name="categoria" onChange={handleChange}>
+              <select
+                id="categoria"
+                value={productosEditados.categoria}
+                name="categoria"
+                onChange={handleChange}
+              >
                 <option>Seleccione una categoria:</option>
-                <option value="6349e39c62b7f0c2656f8667">REMERAS</option>
-                <option value="6349e3b362b7f0c2656f866f">BUZOS</option>
-                <option value="6349e3a762b7f0c2656f866b">CHOMBAS</option>
-                <option value="6349e3b962b7f0c2656f8673">CAMPERAS</option>
-                <option value="6349e3df62b7f0c2656f867f">SHORT ELASTIZADOS DEPORTIVOS</option>
-                <option value="6349e3d162b7f0c2656f867b">JHOGGINS ELASTIZADOS DEPORTIVOS</option>
+                {props.categ.map((element) => {
+                  return <option value={element._id}>{element.nombre}</option>;
+                })}
               </select>
-
             </Form.Group>
             <Form.Label>Descripcion:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
-              <textarea name="descripcion"  value={productosEditados.descripcion} onChange={handleChange}  cols="55" className="form-control textarea" id="textAreaExample1" rows="4" placeholder="Ingrese la descripcion" required></textarea>
+              <textarea
+                name="descripcion"
+                value={productosEditados.descripcion}
+                onChange={handleChange}
+                cols="55"
+                className="form-control textarea"
+                id="textAreaExample1"
+                rows="4"
+                placeholder="Ingrese la descripcion"
+                required
+              ></textarea>
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -182,48 +244,83 @@ const Admi = (props) => {
           <Button variant="danger" onClick={handleClose}>
             cancelar
           </Button>
-          <Button variant="success" onClick={() => editProduct(productosEditados)}>
+          <Button
+            variant="success"
+            onClick={() => editProduct(productosEditados)}
+          >
             Guardar Cambios
           </Button>
-
         </Modal.Footer>
       </Modal>
 
       {/* ============================================================================== */}
 
-      <div className="container mt-5 mb-5 " >
+      <div className="container mt-5 mb-5 ">
         <h2 className="text-center mb-5 text-light">¡Bienvenida Zulma!</h2>
         <Table responsive striped bordered hover size="sm">
           <thead>
             <tr>
               <th>Imagen</th>
-              <th>Categoria</th> 
+              <th>Categoria</th>
               <th>Nombre</th>
               <th>Precio</th>
-              <th> <Button onClick={() => abrirCerrarModalCrear()} className="btn btn-success">Crear</Button></th>
+              <th>
+                {" "}
+                <Button
+                  onClick={() => abrirCerrarModalCrear()}
+                  className="btn btn-success"
+                >
+                  Crear Producto
+                </Button>
+                <Button
+                  onClick={() => abrirCerrarModalCategoria()}
+                  className="btn btn-primary"
+                >
+                  Crear Categoria
+                </Button>
+              </th>
             </tr>
           </thead>
           <tbody>
-            {productos.map(element => {
+            {productos.map((element) => {
               return (
                 <tr key={element._id}>
-                  <td> <img src={element.img} alt={`producto - ${element.nombre}`} width={40} height={48} /></td>
-                  <td>{element.categoria.nombre}</td>  
+                  <td>
+                    {" "}
+                    <img
+                      src={element.img}
+                      alt={`producto - ${element.nombre}`}
+                      width={40}
+                      height={48}
+                    />
+                  </td>
+                  <td>{element.categoria.nombre}</td>
                   <td>{element.nombre}</td>
                   <td>${element.precio}</td>
                   <td className="w-25 text-center">
-                    <Button value={element._id} onClick={eliminarProducto} className="btn btn-danger m-2 btn-admi">Eliminar</Button>
-                    <Button value={element._id} onClick={() => actualizarProductos(element)} className="btn btn-success  m-2 btn-admi">Modificar</Button>
+                    <Button
+                      value={element._id}
+                      onClick={eliminarProducto}
+                      className="btn btn-danger m-2 btn-admi"
+                    >
+                      Eliminar
+                    </Button>
+                    <Button
+                      value={element._id}
+                      onClick={() => actualizarProductos(element)}
+                      className="btn btn-success  m-2 btn-admi"
+                    >
+                      Modificar
+                    </Button>
                   </td>
                 </tr>
-              )
+              );
             })}
-
           </tbody>
         </Table>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Admi;

@@ -11,6 +11,8 @@ export const admiProductosFetch = async () =>{
     return mercaderia.data.productos
 };
 
+
+
 export const deleteProduct = async (id) => {
     const mercaderiaBorrar = await fetch(`${urlBase}/productos/${id}`,
         {
@@ -65,8 +67,31 @@ export const createProduct = async (productos) => {
         }
         
     ).then((response) => response.json());
-
     alert(" Nueva prenda Creada "); 
+    location.reload()
+
+/* console.log(productos)
+console.log(response) */
+
+
+};
+
+export const createCategoria = async (productos) => {
+    const response = await fetch(`${urlBase}/categorias`,
+        {
+            method: "POST",
+            body: JSON.stringify({
+                nombre: productos.nombre,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                Authorization: JSON.parse(localStorage.getItem("token")),
+            },
+        }
+        
+    ).then((response) => response.json());
+
+    alert(" Nueva categoria Creada "); 
     location.reload()
 /* console.log(productos)
 console.log(response) */

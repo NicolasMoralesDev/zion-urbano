@@ -10,29 +10,37 @@ const Productos = (props) => {
   };
 
   const [productos, setProductos] = useState(articulos);
+  console.log(productos.filter(datos => datos.categoria.nombre == props.titulo))
 
   return (
     <>
       <div className='row catalogo_container'>
         <h5 className='text-left titulo-categoria'>{props.titulo}</h5>
-        {productos.map(element => {
+      
+      {productos.filter(datos => datos.categoria.nombre == props.titulo) != 0 ?
+          
+            productos.map(element => {
 
-          return (
+              return (
 
-            <Card id='card-estilo' key={element._id} className='card' style={{ width: '18rem' }}>
-              <img variant="top" className='img-product' src={element.img} />
-              <Card.Body>
-                <Card.Title className='card__nombre'>{element.nombre}</Card.Title>
-                <Card.Text>
-                  {element.descripcion}
-                </Card.Text>
-                <h3 className='precio-card'>${element.precio}</h3>
+                <Card id='card-estilo' key={element._id} className='card' style={{ width: '18rem' }}>
+                  <img variant="top" className='img-product' src={element.img} />
+                  <Card.Body>
+                    <Card.Title className='card__nombre'>{element.nombre}</Card.Title>
+                    <Card.Text>
+                      {element.descripcion}
+                    </Card.Text>
+                    <h3 className='precio-card'>${element.precio}</h3>
 
-                <button className="custom-btn btn-12" role="link" onClick={() => consulta(element.nombre)}><span>Click!!</span><span>Pregunta!</span></button>
-              </Card.Body>
-            </Card>
-          )
-        })}
+                    <button className="custom-btn btn-12" role="link" onClick={() => consulta(element.nombre)}><span>Click!!</span><span>Pregunta!</span></button>
+                  </Card.Body>
+                </Card>
+              )
+            })
+          
+          :
+          <h2 className='text-left titulo-categoria'> No disponible</h2>
+        } 
       </div>
     </>
   )
