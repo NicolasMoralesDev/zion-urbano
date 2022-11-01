@@ -44,9 +44,10 @@ export const editProduct = async (producto) => {
         }
     );
         alert("prenda Modificada correctamente");
-        console.log(response)
-        console.log(producto)
-};
+        location.reload()
+    }
+      
+       
 
 
 export const editCategoria = async (categoria) => {
@@ -63,8 +64,8 @@ export const editCategoria = async (categoria) => {
         }
     );
         alert("categoria Modificada correctamente");
-   console.log(response)
-   console.log(categoria.nombre)
+   location.reload();
+
 };
 
 export const createProduct = async (productos) => {
