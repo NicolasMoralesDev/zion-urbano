@@ -6,18 +6,26 @@ import Form from "react-bootstrap/Form";
 import { createProduct, deleteProduct, editProduct } from "../helper/fetchAdmi";
 import { upload } from "../firebase/config";
 import ModalCrearCategoria from "./ModalCrearCategoria";
+import ModalEditarCategoria from "./ModalEditarCategoria";
 
 const Admi = (props) => {
   const [show, setShow] = useState(false);
   const [mostrar, setMostrar] = useState(false);
   const [crearCategoria, setCrearCategoria] = useState(false);
+  const [editarCategoria, setEditarCategoria] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleCerrar = () => setMostrar(false);
   const handleCerrarCategoria = () => setCrearCategoria(false);
+  const handleEditarCategoria = () => setEditarCategoria(false);
+
 
   const abrirCerrarModalCategoria = () => {
     setCrearCategoria(!crearCategoria);
+  };
+
+  const abrirCerrarModalCategoriaEditada = () => {
+    setEditarCategoria(!editarCategoria);
   };
 
   const abrirCerrarModalEditar = () => {
@@ -84,6 +92,10 @@ const Admi = (props) => {
         handleCerrarCategoria={handleCerrarCategoria}
         crearCategoria={crearCategoria}
       />
+
+      <ModalEditarCategoria  handleEditarCategoria={handleEditarCategoria}
+       editarCategoria={editarCategoria}/>
+
       <Modal show={mostrar} onHide={handleCerrar} animation={false}>
         <Modal.Header closeButton>
           <Modal.Title>Crear Producto:</Modal.Title>
@@ -277,6 +289,14 @@ const Admi = (props) => {
                   className="btn btn-primary"
                 >
                   Crear Categoria
+                </Button>
+              </th>
+              <th>
+              <Button
+                  onClick={() => abrirCerrarModalCategoriaEditada()}
+                  className="btn btn-primary"
+                >
+                  Editar Categoria
                 </Button>
               </th>
             </tr>

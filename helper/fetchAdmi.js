@@ -44,8 +44,27 @@ export const editProduct = async (producto) => {
         }
     );
         alert("prenda Modificada correctamente");
-    location.reload();
+        console.log(response)
+        console.log(producto)
+};
 
+
+export const editCategoria = async (categoria) => {
+    const response = await fetch(`${urlBase}/categorias/${categoria._id}`,
+        {
+            method: "PUT",
+            body: JSON.stringify({
+                nombre: categoria.nombre,
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                Authorization: JSON.parse(localStorage.getItem("token")),
+            },
+        }
+    );
+        alert("categoria Modificada correctamente");
+   console.log(response)
+   console.log(categoria.nombre)
 };
 
 export const createProduct = async (productos) => {
@@ -70,8 +89,6 @@ export const createProduct = async (productos) => {
     alert(" Nueva prenda Creada "); 
     location.reload()
 
-/* console.log(productos)
-console.log(response) */
 
 
 };
@@ -93,8 +110,5 @@ export const createCategoria = async (productos) => {
 
     alert(" Nueva categoria Creada "); 
     location.reload()
-/* console.log(productos)
-console.log(response) */
-
 
 };
