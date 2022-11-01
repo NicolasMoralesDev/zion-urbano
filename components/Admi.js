@@ -286,7 +286,7 @@ const Admi = (props) => {
                 </Button>
                 <Button
                   onClick={() => abrirCerrarModalCategoria()}
-                  className="btn btn-primary"
+                  className="btn btn-primary m-1"
                 >
                   Crear Categoria
                 </Button>
@@ -294,7 +294,7 @@ const Admi = (props) => {
               <th>
               <Button
                   onClick={() => abrirCerrarModalCategoriaEditada()}
-                  className="btn btn-primary"
+                  className="btn btn-dark"
                 >
                   Editar Categoria
                 </Button>
