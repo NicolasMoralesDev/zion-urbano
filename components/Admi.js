@@ -7,6 +7,8 @@ import { createProduct, deleteProduct, editProduct } from "../helper/fetchAdmi";
 import { upload } from "../firebase/config";
 import ModalCrearCategoria from "./ModalCrearCategoria";
 import ModalEditarCategoria from "./ModalEditarCategoria";
+import Spinner from 'react-bootstrap/Spinner';
+
 
 const Admi = (props) => {
   const [show, setShow] = useState(false);
@@ -69,6 +71,8 @@ const Admi = (props) => {
   const handleimg = async (e) => {
     const url = await upload(e.target.files[0]);
     productosCreados.img = url;
+
+
   };
 
   const editimg = async (e) => {
@@ -93,8 +97,8 @@ const Admi = (props) => {
         crearCategoria={crearCategoria}
       />
 
-      <ModalEditarCategoria  handleEditarCategoria={handleEditarCategoria}
-       editarCategoria={editarCategoria}/>
+      <ModalEditarCategoria handleEditarCategoria={handleEditarCategoria}
+        editarCategoria={editarCategoria} />
 
       <Modal show={mostrar} onHide={handleCerrar} animation={false}>
         <Modal.Header closeButton>
@@ -168,12 +172,16 @@ const Admi = (props) => {
           <Button variant="danger" onClick={handleCerrar}>
             cancelar
           </Button>
-          <Button
-            variant="success"
-            onClick={() => createProduct(productosCreados)}
-          >
-            Crear
-          </Button>
+          {
+            productosCreados.img ? <Button
+              variant="success"
+              onClick={() => createProduct(productosCreados)}
+            >
+              Crear
+            </Button> :
+              <Spinner animation="border" />
+          }
+
         </Modal.Footer>
       </Modal>
 
@@ -221,21 +229,6 @@ const Admi = (props) => {
               <input type="file" name="file" onChange={editimg} />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicCateg">
-              <Form.Label id="categoria">Categoria:</Form.Label>
-
-              <select
-                id="categoria"
-                value={productosEditados.categoria}
-                name="categoria"
-                onChange={handleChange}
-              >
-                <option>Seleccione una categoria:</option>
-                {props.categ.map((element) => {
-                  return <option value={element._id} key={element._id}>{element.nombre}</option>;
-                })}
-              </select>
-            </Form.Group>
             <Form.Label>Descripcion:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
               <textarea
@@ -256,12 +249,15 @@ const Admi = (props) => {
           <Button variant="danger" onClick={handleClose}>
             cancelar
           </Button>
-          <Button
-            variant="success"
-            onClick={() => editProduct(productosEditados)}
-          >
-            Guardar Cambios
-          </Button>
+          {
+            productosCreados.img ? <Button
+              variant="success"
+              onClick={() => editProduct(productosEditados)}
+            >
+              Guardar Cambios
+            </Button> :
+              <Spinner animation="border" />
+          }
         </Modal.Footer>
       </Modal>
 
@@ -286,15 +282,15 @@ const Admi = (props) => {
                 </Button>
                 <Button
                   onClick={() => abrirCerrarModalCategoria()}
-                  className="btn btn-primary"
+                  className="btn btn-primary m-1"
                 >
                   Crear Categoria
                 </Button>
               </th>
               <th>
-              <Button
+                <Button
                   onClick={() => abrirCerrarModalCategoriaEditada()}
-                  className="btn btn-primary"
+                  className="btn btn-dark"
                 >
                   Editar Categoria
                 </Button>
@@ -340,6 +336,7 @@ const Admi = (props) => {
         </Table>
       </div>
     </>
+    
   );
 };
 
