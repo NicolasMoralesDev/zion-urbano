@@ -177,7 +177,7 @@ const Admi = (props) => {
           >
             Crear
           </Button> :
-          "Cargado Imagen...."
+          "Cargado Imagen..."
           }
           
         </Modal.Footer>
