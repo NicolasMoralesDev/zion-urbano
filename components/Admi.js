@@ -227,21 +227,7 @@ const Admi = (props) => {
               <input type="file" name="file" onChange={editimg} />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicCateg">
-              <Form.Label id="categoria">Categoria:</Form.Label>
-
-              <select
-                id="categoria"
-                value={productosEditados.categoria}
-                name="categoria"
-                onChange={handleChange}
-              >
-                <option>Seleccione una categoria:</option>
-                {props.categ.map((element) => {
-                  return <option value={element._id} key={element._id}>{element.nombre}</option>;
-                })}
-              </select>
-            </Form.Group>
+            
             <Form.Label>Descripcion:</Form.Label>
             <Form.Group className="mb-3 m-3" controlId="formBasicText">
               <textarea
