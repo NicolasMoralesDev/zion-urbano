@@ -7,6 +7,8 @@ import { createProduct, deleteProduct, editProduct } from "../helper/fetchAdmi";
 import { upload } from "../firebase/config";
 import ModalCrearCategoria from "./ModalCrearCategoria";
 import ModalEditarCategoria from "./ModalEditarCategoria";
+import Spinner from 'react-bootstrap/Spinner';
+
 
 const Admi = (props) => {
   const [show, setShow] = useState(false);
@@ -95,8 +97,8 @@ const Admi = (props) => {
         crearCategoria={crearCategoria}
       />
 
-      <ModalEditarCategoria  handleEditarCategoria={handleEditarCategoria}
-       editarCategoria={editarCategoria}/>
+      <ModalEditarCategoria handleEditarCategoria={handleEditarCategoria}
+        editarCategoria={editarCategoria} />
 
       <Modal show={mostrar} onHide={handleCerrar} animation={false}>
         <Modal.Header closeButton>
@@ -172,14 +174,14 @@ const Admi = (props) => {
           </Button>
           {
             productosCreados.img ? <Button
-            variant="success"
-            onClick={() => createProduct(productosCreados)}
-          >
-            Crear
-          </Button> :
-          "Cargado Imagen..."
+              variant="success"
+              onClick={() => createProduct(productosCreados)}
+            >
+              Crear
+            </Button> :
+              <Spinner animation="border" />
           }
-          
+
         </Modal.Footer>
       </Modal>
 
@@ -248,12 +250,15 @@ const Admi = (props) => {
           <Button variant="danger" onClick={handleClose}>
             cancelar
           </Button>
-          <Button
-            variant="success"
-            onClick={() => editProduct(productosEditados)}
-          >
-            Guardar Cambios
-          </Button>
+          {
+            productosCreados.img ? <Button
+              variant="success"
+              onClick={() => editProduct(productosEditados)}
+            >
+              Guardar Cambios
+            </Button> :
+              <Spinner animation="border" />
+          }
         </Modal.Footer>
       </Modal>
 
@@ -284,7 +289,7 @@ const Admi = (props) => {
                 </Button>
               </th>
               <th>
-              <Button
+                <Button
                   onClick={() => abrirCerrarModalCategoriaEditada()}
                   className="btn btn-dark"
                 >
@@ -332,6 +337,7 @@ const Admi = (props) => {
         </Table>
       </div>
     </>
+    
   );
 };
 
