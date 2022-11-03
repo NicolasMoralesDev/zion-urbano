@@ -69,6 +69,8 @@ const Admi = (props) => {
   const handleimg = async (e) => {
     const url = await upload(e.target.files[0]);
     productosCreados.img = url;
+
+
   };
 
   const editimg = async (e) => {
@@ -168,12 +170,16 @@ const Admi = (props) => {
           <Button variant="danger" onClick={handleCerrar}>
             cancelar
           </Button>
-          <Button
+          {
+            productosCreados.img ? <Button
             variant="success"
             onClick={() => createProduct(productosCreados)}
           >
             Crear
-          </Button>
+          </Button> :
+          "Cargado Imagen...."
+          }
+          
         </Modal.Footer>
       </Modal>
 
