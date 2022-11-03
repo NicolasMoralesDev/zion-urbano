@@ -44,17 +44,10 @@ export const editProduct = async (producto) => {
         }
     );
         alert("prenda Modificada correctamente");
-<<<<<<< HEAD
-        
-        location.reload()
-
-};
-=======
         location.reload()
     }
       
        
->>>>>>> 202f85cbc42e74280e6e8f281840d68006cb0db3
 
 
 export const editCategoria = async (categoria) => {
@@ -71,13 +64,8 @@ export const editCategoria = async (categoria) => {
         }
     );
         alert("categoria Modificada correctamente");
-<<<<<<< HEAD
-
-        location.reload()
-=======
    location.reload();
 
->>>>>>> 202f85cbc42e74280e6e8f281840d68006cb0db3
 };
 
 export const createProduct = async (productos) => {
