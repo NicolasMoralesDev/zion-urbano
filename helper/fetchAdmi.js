@@ -44,9 +44,17 @@ export const editProduct = async (producto) => {
         }
     );
         alert("prenda Modificada correctamente");
-        console.log(response)
-        console.log(producto)
+<<<<<<< HEAD
+        
+        location.reload()
+
 };
+=======
+        location.reload()
+    }
+      
+       
+>>>>>>> 202f85cbc42e74280e6e8f281840d68006cb0db3
 
 
 export const editCategoria = async (categoria) => {
@@ -63,8 +71,13 @@ export const editCategoria = async (categoria) => {
         }
     );
         alert("categoria Modificada correctamente");
-   console.log(response)
-   console.log(categoria.nombre)
+<<<<<<< HEAD
+
+        location.reload()
+=======
+   location.reload();
+
+>>>>>>> 202f85cbc42e74280e6e8f281840d68006cb0db3
 };
 
 export const createProduct = async (productos) => {
@@ -86,10 +99,8 @@ export const createProduct = async (productos) => {
         }
         
     ).then((response) => response.json());
-    alert(" Nueva prenda Creada "); 
+
     location.reload()
-
-
 
 };
 

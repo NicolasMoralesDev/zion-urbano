@@ -31,7 +31,10 @@ const ModalEditarCategoria = (props) => {
         const { name, value } = e.target;
         setCategoriaEdit((prevState) =>
             ({ ...prevState, [name]: value }));
-            console.log(categoriaEdit)
+<<<<<<< HEAD
+=======
+           
+>>>>>>> 202f85cbc42e74280e6e8f281840d68006cb0db3
     };
 
 
