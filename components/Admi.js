@@ -225,9 +225,6 @@ const Admi = (props) => {
                 required
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicImg">
-              <input type="file" name="file" onChange={editimg} />
-            </Form.Group>
 
             
             <Form.Label>Descripcion:</Form.Label>
@@ -250,15 +247,12 @@ const Admi = (props) => {
           <Button variant="danger" onClick={handleClose}>
             cancelar
           </Button>
-          {
-            productosCreados.img ? <Button
+            <Button
               variant="success"
               onClick={() => editProduct(productosEditados)}
             >
               Guardar Cambios
-            </Button> :
-              <Spinner animation="border" />
-          }
+            </Button> 
         </Modal.Footer>
       </Modal>
 
