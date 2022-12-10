@@ -1,7 +1,7 @@
 import axios from 'axios'
 
  const url = axios.create( {
-    baseURL:"https://zion-backend-a.herokuapp.com/api",
+    baseURL:"https://zion-backend-2uq8un6gw-luci6611.vercel.app/api",
 });
 
 export const productosFetch = async () =>{
