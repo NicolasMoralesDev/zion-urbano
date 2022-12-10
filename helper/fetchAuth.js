@@ -1,4 +1,4 @@
-const url = "https://zion-backend-a.herokuapp.com/api/auth/login";
+const url = "https://zion-backend-2uq8un6gw-luci6611.vercel.app/api/auth/login";
 export const usuarios = {usuario:""};
 
 
